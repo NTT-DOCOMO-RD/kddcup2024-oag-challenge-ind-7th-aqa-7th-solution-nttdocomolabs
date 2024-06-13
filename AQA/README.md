@@ -1,4 +1,4 @@
-# OAG-AQA Task 7place Solution
+# OAG-AQA Task 7th Solution
 
 ## Prerequisites
 * Linux 
@@ -16,11 +16,11 @@ phase1 [https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA.zip](https://
 phase2 [https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA-test-public.zip](https://open-data-set.oss-cn-beijing.aliyuncs.com/oag-benchmark/kddcup-2024/AQA/AQA-test-public.zip)
 
 ## LLM generate
-* Add LLM-generated output to query
+* Add LLM-generated answer of question to query(HyDE)
 * Mthod overview
-- Input "question + body" information into LLM
-- Delete body links
-- Use only the first and second halves of the combined question + body text.
+  - Input "question + body" information into LLM
+  - Delete body links
+  - Use only the first and second halves of the combined question + body text.
   
 ` python code/llm_generate/train_llm_answer_question_body.py `
 
