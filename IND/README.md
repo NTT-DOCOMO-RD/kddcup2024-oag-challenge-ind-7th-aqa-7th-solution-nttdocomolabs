@@ -31,6 +31,8 @@ You can start from any number within the same number.
 
 ### Notes on Execution
 
+Intermediate products such as feature data can be downloaded from https://drive.google.com/drive/folders/1YuqZDqZWcl_d9EOdGDgdtkGPAhSKLS9W?usp=drive_link
+
 If you want to start with feature generation, unzip raw.zip, 
 extract it to the same hierarchy as "Code", 
 and execute in order from Code/0_xxx.
