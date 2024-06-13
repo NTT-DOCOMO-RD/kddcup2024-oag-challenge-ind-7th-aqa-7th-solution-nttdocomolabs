@@ -29,6 +29,16 @@ You can start from any number within the same number.
 
 * Code/0_xx => Code/1_xx => Code/2_xx
 
+### Notes on Execution
+
+If you want to start with feature generation, unzip raw.zip, 
+extract it to the same hierarchy as "Code", 
+and execute in order from Code/0_xxx.
+
+If you want to skip feature generation (Code/0_xxxxx, Code/1_xxxxx), 
+unzip test_data.zip & test_feature.zip, 
+extract them to the same hierarchy as "Code", and then execute Code/2_XXX
+
 # Detail
 ## raw
 Provided data
