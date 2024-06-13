@@ -16,7 +16,11 @@ phase1 [https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA.zip](https://
 phase2 [https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA-test-public.zip](https://open-data-set.oss-cn-beijing.aliyuncs.com/oag-benchmark/kddcup-2024/AQA/AQA-test-public.zip)
 
 ## LLM generate
-* Generate LLM and add LLM-generated output to query
+* Add LLM-generated output to query
+** method overview
+** Input question + body information into LLM
+** Delete body links
+** Use only the first and second halves of the combined question + body text.
   
 ` python code/llm_generate/train_llm_answer_question_body.py `
 
@@ -27,10 +31,10 @@ phase2 [https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA-test-public.z
 ` python code/llm_generate/test_llm_summarize_question_body.py `
 
 ## Create candidate
-* Contrastive learning(SimCSE: Simple Contrastive Learning of Sentence Embeddings) by train query vs passage
-* Vector search by using Contrastive learning model weight and knn
-* Preprocessing text(Add prefix before text: <question>, <llm answer> etc., head-tail word :Use words from the first half and second half of the text.)
-* In train, a lot of data are used in the passage to increase the number of positive examples (train, papers, etc.).  In test, Use only papers data added in Phase 2
+* Perform contrastive learning(SimCSE: Simple Contrastive Learning of Sentence Embeddings) by train query vs passage
+* Vector search by the trained model above and perform knn
+* Preprocess text(Add prefix before text: <question>, <llm answer> etc., head-tail word :Use words from the first half and second half of the text.)
+* In train, a lot of data are used in the passage to increase the number of positive examples (train, papers, etc.). In test, however, papers that were added in phase 2 are only used for inference
   
 ` git clone https://github.com/rapidsai/rapidsai-csp-utils.git `
 
@@ -41,8 +45,8 @@ phase2 [https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA-test-public.z
 ` python code/create_candidate/test_create_candidate_dataset.py `
 
 ## Reranking
-* Binary classification candidates top 100 by deberta V3 large model
-* Negative down sampling due to many negative candidate examples
+* Binary classification to candidates top 100 by deberta V3 large model
+* To reduce negative candidate examples, perform negative down sampling
 
 ` pip install numpy==1.23.5 `
 
@@ -59,7 +63,7 @@ phase2 [https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA-test-public.z
 ` python code/reranker/inference_rerank_neg_sample_3.py `
 
 ## Ensemble
-* Ensemble 3 reranker preds(0.0~1.0) by simple average
+* Ensemble 3 reranker preds(0.0~1.0) by simply averaging
 
 ` python code/ensemble/ensemble.py` 
 
