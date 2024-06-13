@@ -11,9 +11,9 @@
 
 ## Dataset
 
-phase1 https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA.zip
+phase1 [https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA.zip](https://www.dropbox.com/scl/fi/2ckwl9fcpbik88z1cekot/AQA.zip?rlkey=o7ttmrvpdbvbu3rcr6t33jrx7&dl=1)
 
-phase2 https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA-test-public.zip
+phase2 [https://www.biendata.xyz/competition/aqa_kdd_2024/data/AQA-test-public.zip](https://open-data-set.oss-cn-beijing.aliyuncs.com/oag-benchmark/kddcup-2024/AQA/AQA-test-public.zip)
 
 ## LLM generate
 * Generate LLM and add LLM-generated output to query
